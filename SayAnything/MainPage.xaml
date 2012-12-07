@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="SayAnything.MainPage"
+    x:Class="Ktos.SayAnything.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -41,12 +41,12 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="SAY ANYTHING" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.AppName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox x:Name="tbUserText" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Text="hello, world, how are you doing in this stupid land"/>
+            <TextBox x:Name="tbUserText" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.WelcomeText, Source={StaticResource LocalizedStrings}}"/>
         </Grid>
         
         <!--Uncomment to see an alignment grid to help ensure your controls are

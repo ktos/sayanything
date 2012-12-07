@@ -7,10 +7,10 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using SayAnything.Resources;
+using Ktos.SayAnything.Resources;
 using Windows.Phone.Speech.Synthesis;
 
-namespace SayAnything
+namespace Ktos.SayAnything
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -32,12 +32,12 @@ namespace SayAnything
             // Create a new button and set the text value to the localized string from AppResources.
             ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.play.rest.png", UriKind.Relative));
             appBarButton.Click += appBarButton_Click;
-            appBarButton.Text = AppResources.AppBarButtonText;
+            //appBarButton.Text = AppResources.AppBarButtonText;
             ApplicationBar.Buttons.Add(appBarButton);
 
             // Create a new menu item with the localized string from AppResources.
-            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-            ApplicationBar.MenuItems.Add(appBarMenuItem);
+            //ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            //ApplicationBar.MenuItems.Add(appBarMenuItem);
         }
 
         async void appBarButton_Click(object sender, EventArgs e)

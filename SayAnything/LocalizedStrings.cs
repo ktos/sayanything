@@ -1,6 +1,6 @@
-﻿using SayAnything.Resources;
+﻿using Ktos.SayAnything.Resources;
 
-namespace SayAnything
+namespace Ktos.SayAnything
 {
     /// <summary>
     /// Provides access to string resources.

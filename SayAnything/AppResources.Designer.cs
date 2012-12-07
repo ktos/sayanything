@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ktos.SayAnything.Resources {
+namespace Ktos.SayAnything {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Ktos.SayAnything.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ktos.SayAnything.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ktos.SayAnything.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,11 @@ namespace Ktos.SayAnything.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to add.
+        ///   Looks up a localized string similar to SAY ANYTHING.
         /// </summary>
-        public static string AppBarButtonText {
+        public static string AppName {
             get {
-                return ResourceManager.GetString("AppBarButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Menu Item.
-        /// </summary>
-        public static string AppBarMenuItemText {
-            get {
-                return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MY APPLICATION.
-        /// </summary>
-        public static string ApplicationTitle {
-            get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+                return ResourceManager.GetString("AppName", resourceCulture);
             }
         }
         
@@ -102,6 +84,15 @@ namespace Ktos.SayAnything.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello, how are you?.
+        /// </summary>
+        public static string WelcomeText {
+            get {
+                return ResourceManager.GetString("WelcomeText", resourceCulture);
             }
         }
     }

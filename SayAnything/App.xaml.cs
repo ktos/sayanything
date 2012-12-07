@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using SayAnything.Resources;
+using Ktos.SayAnything.Resources;
 
-namespace SayAnything
+namespace Ktos.SayAnything
 {
     public partial class App : Application
     {
@@ -200,7 +200,7 @@ namespace SayAnything
                 // supported language.
                 //
                 // If a compiler error is hit then ResourceFlowDirection is missing from
-                // the resource file.
+                // the resource file.                
                 FlowDirection flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), AppResources.ResourceFlowDirection);
                 RootFrame.FlowDirection = flow;
             }
