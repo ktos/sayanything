@@ -61,11 +61,65 @@ namespace Ktos.SayAnything {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to about.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SAY ANYTHING.
         /// </summary>
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send e-mail.
+        /// </summary>
+        public static string bSendMail {
+            get {
+                return ResourceManager.GetString("bSendMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voice (language and gender) to be used:.
+        /// </summary>
+        public static string lblVoice {
+            get {
+                return ResourceManager.GetString("lblVoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some exception was unhandled. Please restart an application to ensure it working properly..
+        /// </summary>
+        public static string msgException {
+            get {
+                return ResourceManager.GetString("msgException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an error while trying to play your text..
+        /// </summary>
+        public static string msgPlayError {
+            get {
+                return ResourceManager.GetString("msgPlayError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to play.
+        /// </summary>
+        public static string Play {
+            get {
+                return ResourceManager.GetString("Play", resourceCulture);
             }
         }
         
@@ -84,6 +138,33 @@ namespace Ktos.SayAnything {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support: wp7@ktos.info.
+        /// </summary>
+        public static string Support {
+            get {
+                return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version 1.0.
+        /// </summary>
+        public static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
             }
         }
         

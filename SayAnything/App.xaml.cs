@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Ktos.SayAnything.Resources;
+using System.IO.IsolatedStorage;
 
 namespace Ktos.SayAnything
 {
@@ -17,6 +18,8 @@ namespace Ktos.SayAnything
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
+
+        public static string VoiceId;
 
         /// <summary>
         /// Constructor for the Application object.
@@ -61,6 +64,7 @@ namespace Ktos.SayAnything
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            VoiceId = (string)IsolatedStorageSettings.ApplicationSettings["voiceid"];
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -79,6 +83,7 @@ namespace Ktos.SayAnything
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
+            IsolatedStorageSettings.ApplicationSettings["voiceid"] = VoiceId;
         }
 
         // Code to execute if a navigation fails
@@ -99,6 +104,8 @@ namespace Ktos.SayAnything
                 // An unhandled exception has occurred; break into the debugger
                 Debugger.Break();
             }
+
+            MessageBox.Show(AppResources.msgException + "\n" + e.ExceptionObject.Message);
         }
 
         #region Phone application initialization

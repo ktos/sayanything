@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Ktos.SayAnything.Resources;
+using Ktos.SayAnything.Models;
 using Windows.Phone.Speech.Synthesis;
 
 namespace Ktos.SayAnything
@@ -19,33 +20,43 @@ namespace Ktos.SayAnything
         {
             InitializeComponent();
 
-            // Sample code to localize the ApplicationBar
             BuildLocalizedApplicationBar();
         }
 
-        // Sample code for building a localized ApplicationBar
+        /// <summary>
+        /// Budowanie zlokalizowanego ApplicationBar
+        /// </summary>
         private void BuildLocalizedApplicationBar()
         {
-            // Set the page's ApplicationBar to a new instance of ApplicationBar.
-            ApplicationBar = new ApplicationBar();
+            this.ApplicationBar = new ApplicationBar();
 
-            // Create a new button and set the text value to the localized string from AppResources.
             ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.play.rest.png", UriKind.Relative));
             appBarButton.Click += appBarButton_Click;
-            //appBarButton.Text = AppResources.AppBarButtonText;
+            appBarButton.Text = AppResources.Play;
             ApplicationBar.Buttons.Add(appBarButton);
 
-            // Create a new menu item with the localized string from AppResources.
-            //ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-            //ApplicationBar.MenuItems.Add(appBarMenuItem);
+            var miSettings = new ApplicationBarMenuItem(AppResources.Settings);
+            miSettings.Click += (s, ev) => { NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative)); };
+
+            var miAbout = new ApplicationBarMenuItem(AppResources.About);
+            miAbout.Click += (s, ev) => { NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative)); };
+
+            ApplicationBar.MenuItems.Add(miSettings);
+            ApplicationBar.MenuItems.Add(miAbout);
+
         }
 
-        async void appBarButton_Click(object sender, EventArgs e)
+        void appBarButton_Click(object sender, EventArgs e)
         {
-            var text2speech = new SpeechSynthesizer();
-            await text2speech.SpeakSsmlAsync(@"<speak version=""1.0""
-                xmlns=""http://www.w3.org/2001/10/synthesis"" xml:lang=""pl-PL"">
-                <voice gender=""male"">" + tbUserText.Text + "</voice></speak>");
+            try
+            {
+                VoiceInformation v = (VoiceInformation)PhoneApplicationService.Current.State["voice"];
+                Speech.Say(tbUserText.Text, v.Language, v.Gender);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(AppResources.msgPlayError);
+            }
         }
     }
 }
