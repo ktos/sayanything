@@ -15,6 +15,8 @@ namespace Ktos.SayAnything
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private ApplicationBarIconButton btnPlay;
+
         // Constructor
         public MainPage()
         {
@@ -30,10 +32,10 @@ namespace Ktos.SayAnything
         {
             this.ApplicationBar = new ApplicationBar();
 
-            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.play.rest.png", UriKind.Relative));
-            appBarButton.Click += appBarButton_Click;
-            appBarButton.Text = AppResources.Play;
-            ApplicationBar.Buttons.Add(appBarButton);
+            btnPlay = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.play.rest.png", UriKind.Relative));
+            btnPlay.Click += appBarButton_Click;
+            btnPlay.Text = AppResources.Play;
+            ApplicationBar.Buttons.Add(btnPlay);
 
             var miSettings = new ApplicationBarMenuItem(AppResources.Settings);
             miSettings.Click += (s, ev) => { NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative)); };
@@ -51,8 +53,12 @@ namespace Ktos.SayAnything
             try
             {
                 VoiceInformation v = (VoiceInformation)PhoneApplicationService.Current.State["voice"];
-                await Speech.Say(tbUserText.Text, v.Language, v.Gender);
-            }
+                var text = tbUserText.Text;
+                text = System.Text.RegularExpressions.Regex.Replace(text, "<[^>]*(>|$)", "");
+                btnPlay.IsEnabled = false;
+                await Speech.Say(text, v.Language, v.Gender);
+                btnPlay.IsEnabled = true;
+            }                
             catch (Exception ex)
             {
                 MessageBox.Show(AppResources.msgPlayError);

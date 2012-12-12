@@ -83,12 +83,14 @@ namespace Ktos.SayAnything
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            PhoneApplicationService.Current.State["voice"] = Speech.GetVoice(App.VoiceId);
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            PhoneApplicationService.Current.State["voice"] = null;
         }
 
         // Code to execute when the application is closing (eg, user hit Back)

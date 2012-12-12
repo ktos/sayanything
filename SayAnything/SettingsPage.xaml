@@ -30,7 +30,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <TextBlock Text="{Binding Path=LocalizedResources.lblVoice, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                <TextBlock Text="{Binding Path=LocalizedResources.lblVoice, Source={StaticResource LocalizedStrings}}" Margin="5"></TextBlock>
 
                 <toolkit:ListPicker x:Name="lpVoice" SelectionChanged="cbVoice_SelectionChanged">
                     <toolkit:ListPicker.ItemTemplate>
