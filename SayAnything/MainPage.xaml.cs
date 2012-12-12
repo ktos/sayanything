@@ -46,17 +46,23 @@ namespace Ktos.SayAnything
 
         }
 
-        void appBarButton_Click(object sender, EventArgs e)
+        async void appBarButton_Click(object sender, EventArgs e)
         {
             try
             {
                 VoiceInformation v = (VoiceInformation)PhoneApplicationService.Current.State["voice"];
-                Speech.Say(tbUserText.Text, v.Language, v.Gender);
+                await Speech.Say(tbUserText.Text, v.Language, v.Gender);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(AppResources.msgPlayError);
             }
+        }
+
+        private void tbUserText_TextInputStart(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            this.svText.UpdateLayout();
+            this.svText.ScrollToVerticalOffset(this.tbUserText.ActualHeight);
         }
     }
 }

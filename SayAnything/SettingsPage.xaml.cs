@@ -14,19 +14,34 @@ namespace Ktos.SayAnything
 {
     public partial class SettingsPage : PhoneApplicationPage
     {
+        private bool selectable;
+
         public SettingsPage()
         {
+            selectable = false;
             InitializeComponent();
 
-            ContentPanel.DataContext = Speech.GetVoices();
-            lpVoice.SelectedItem = Speech.GetVoices().Select(x => x.Id == App.VoiceId).First();
+            lpVoice.ItemsSource = Speech.GetVoices();                        
+            try
+            {
+                lpVoice.SelectedIndex = (int)PhoneApplicationService.Current.State["index"];
+            }
+            catch (Exception ex)
+            {
+                lpVoice.SelectedIndex = 0;
+            }
+            selectable = true;
         }
 
         private void cbVoice_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
-            var v = (VoiceInformation)e.AddedItems[0];
-            PhoneApplicationService.Current.State["voice"] = v;
-            App.VoiceId = v.Id;
+        {
+            if (selectable)
+            {
+                var v = (VoiceInformation)lpVoice.SelectedItem;
+                PhoneApplicationService.Current.State["voice"] = v;
+                PhoneApplicationService.Current.State["index"] = lpVoice.SelectedIndex;
+                App.VoiceId = v.Id;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Ktos.SayAnything.Resources;
 using System.IO.IsolatedStorage;
+using Ktos.SayAnything.Models;
 
 namespace Ktos.SayAnything
 {
@@ -64,7 +65,18 @@ namespace Ktos.SayAnything
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            VoiceId = (string)IsolatedStorageSettings.ApplicationSettings["voiceid"];
+            try
+            {
+                VoiceId = (string)IsolatedStorageSettings.ApplicationSettings["voiceid"];
+                PhoneApplicationService.Current.State["voice"] = Speech.GetVoice(App.VoiceId);
+                PhoneApplicationService.Current.State["index"] = IsolatedStorageSettings.ApplicationSettings["index"];
+            }
+            catch (System.Collections.Generic.KeyNotFoundException ex)
+            {
+                VoiceId = Speech.GetDefaultVoiceId();
+                PhoneApplicationService.Current.State["voice"] = Speech.GetVoice(App.VoiceId);
+                PhoneApplicationService.Current.State["index"] = 0;
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -84,6 +96,7 @@ namespace Ktos.SayAnything
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
             IsolatedStorageSettings.ApplicationSettings["voiceid"] = VoiceId;
+            IsolatedStorageSettings.ApplicationSettings["index"] = PhoneApplicationService.Current.State["index"];
         }
 
         // Code to execute if a navigation fails

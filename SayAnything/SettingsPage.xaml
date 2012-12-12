@@ -32,12 +32,17 @@
             <StackPanel>
                 <TextBlock Text="{Binding Path=LocalizedResources.lblVoice, Source={StaticResource LocalizedStrings}}"></TextBlock>
 
-                <toolkit:ListPicker x:Name="lpVoice" ItemsSource="{Binding Voices}" SelectionChanged="cbVoice_SelectionChanged">
+                <toolkit:ListPicker x:Name="lpVoice" SelectionChanged="cbVoice_SelectionChanged">
                     <toolkit:ListPicker.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Description}" />
                         </DataTemplate>
                     </toolkit:ListPicker.ItemTemplate>
+                    <toolkit:ListPicker.FullModeItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}" FontSize="28" Margin="5" />
+                        </DataTemplate>
+                    </toolkit:ListPicker.FullModeItemTemplate>
                 </toolkit:ListPicker>
             </StackPanel>
         </Grid>

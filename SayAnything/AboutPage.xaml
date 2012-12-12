@@ -34,10 +34,10 @@
             </Grid.RowDefinitions>
             
             <TextBlock Height="423" HorizontalAlignment="Stretch" Name="tbAbout" Text="{Binding Path=LocalizedResources.textAbout, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" TextWrapping="Wrap" Margin="5,5,0,0" TextAlignment="Left" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Name="tbCopyright" Text="Copyright © Marcin &quot;Ktos&quot; Badurowicz 2012" VerticalAlignment="Top" Grid.Row="1" Width="456" />
-            <HyperlinkButton Content="{Binding Path=LocalizedResources.bSendMail, Source={StaticResource LocalizedStrings}}" Height="30" HorizontalAlignment="Left" Margin="256,27,0,0" Name="bSupport" VerticalAlignment="Top" Width="200" Click="bSupport_Click" Grid.Row="1" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="0,30,0,0" Name="tbSupport" Text="{Binding Path=LocalizedResources.Support, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Grid.Row="1" />
-            <TextBlock Height="30" Text="{Binding Path=LocalizedResources.Version, Source={StaticResource LocalizedStrings}}" Margin="0,86,0,75" Grid.Row="1" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Name="tbCopyright" Text="Copyright © Marcin &quot;Ktos&quot; Badurowicz 2012" VerticalAlignment="Top" Grid.Row="1" Width="456" Margin="0,8,0,0" />
+            <HyperlinkButton Content="{Binding Path=LocalizedResources.bSendMail, Source={StaticResource LocalizedStrings}}" Height="30" HorizontalAlignment="Left" Margin="256,38,0,0" Name="bSupport" VerticalAlignment="Top" Width="200" Click="bSupport_Click" Grid.Row="1" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="0,38,0,0" Name="tbSupport" Text="{Binding Path=LocalizedResources.Support, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" Grid.Row="1" />
+            <TextBlock Height="30" Text="{Binding Path=LocalizedResources.Version, Source={StaticResource LocalizedStrings}}" Margin="0,157,0,0" Grid.Row="1" />
         </Grid>
     </Grid>
 

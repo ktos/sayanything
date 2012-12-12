@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{6edaf4e5-952e-4188-8b14-59fa180a3e40}" Title="SayAnything" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="SayAnything author" Description="Sample description" Publisher="SayAnything" PublisherID="{85ae4c87-660b-4f12-a5e0-7acddf268f5c}">
+  <Languages xmlns="">
+    <Language code="en-US" />
+  </Languages>
+  <App xmlns="" ProductID="{6edaf4e5-952e-4188-8b14-59fa180a3e40}" Title="SayAnything" RuntimeType="Silverlight" Version="1.0" Genre="apps.normal" Author="ktos.info" Description="Sample description" Publisher="ktos.info" PublisherID="{85ae4c87-660b-4f12-a5e0-7acddf268f5c}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
-      <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
-      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
-      <Capability Name="ID_CAP_SENSORS" />
-      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
       <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
     </Capabilities>
     <Tasks>
