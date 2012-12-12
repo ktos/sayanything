@@ -32,7 +32,7 @@ namespace Ktos.SayAnything
         {
             this.ApplicationBar = new ApplicationBar();
 
-            btnPlay = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.play.rest.png", UriKind.Relative));
+            btnPlay = new ApplicationBarIconButton(new Uri("/Assets/appbar.speaker.rest.png", UriKind.Relative));
             btnPlay.Click += appBarButton_Click;
             btnPlay.Text = AppResources.Play;
             ApplicationBar.Buttons.Add(btnPlay);
