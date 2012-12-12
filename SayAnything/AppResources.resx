@@ -135,8 +135,8 @@
   <data name="msgPlayError" xml:space="preserve">
     <value>There was an error while trying to play your text.</value>
   </data>
-  <data name="Play" xml:space="preserve">
-    <value>play</value>
+  <data name="Say" xml:space="preserve">
+    <value>say</value>
   </data>
   <data name="ResourceFlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
@@ -155,5 +155,10 @@
   </data>
   <data name="WelcomeText" xml:space="preserve">
     <value>Hello, how are you?</value>
+  </data>
+  <data name="AboutText" xml:space="preserve">
+    <value>Make your phone to say anything you want! Using brand new, exclusive Text to Speech in Windows Phone 8 you can type any text you want and select a voice. After tapping "say", your phone will say it in it's near real voice! Absolutely amazing! And totally free!
+
+You can select different languages and usually two genders to make your phone to sound as you want to!</value>
   </data>
 </root>

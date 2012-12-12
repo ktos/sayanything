@@ -70,6 +70,17 @@ namespace Ktos.SayAnything {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make your phone to say anything you want! Using brand new, exclusive Text to Speech in Windows Phone 8 you can type any text you want and select a voice. After tapping &quot;say&quot;, your phone will say it in it&apos;s near real voice! Absolutely amazing! And totally free!
+        ///
+        ///You can select different languages and usually two genders to make your phone to sound as you want to!.
+        /// </summary>
+        public static string AboutText {
+            get {
+                return ResourceManager.GetString("AboutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SAY ANYTHING.
         /// </summary>
         public static string AppName {
@@ -115,15 +126,6 @@ namespace Ktos.SayAnything {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to play.
-        /// </summary>
-        public static string Play {
-            get {
-                return ResourceManager.GetString("Play", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -138,6 +140,15 @@ namespace Ktos.SayAnything {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to say.
+        /// </summary>
+        public static string Say {
+            get {
+                return ResourceManager.GetString("Say", resourceCulture);
             }
         }
         

@@ -34,7 +34,7 @@ namespace Ktos.SayAnything
 
             btnPlay = new ApplicationBarIconButton(new Uri("/Assets/appbar.speaker.rest.png", UriKind.Relative));
             btnPlay.Click += appBarButton_Click;
-            btnPlay.Text = AppResources.Play;
+            btnPlay.Text = AppResources.Say;
             ApplicationBar.Buttons.Add(btnPlay);
 
             var miSettings = new ApplicationBarMenuItem(AppResources.Settings);
