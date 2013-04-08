@@ -3,6 +3,7 @@
   <DefaultLanguage xmlns="" code="en-US" />
   <Languages xmlns="">
     <Language code="en-US" />
+    <Language code="pl-PL" />
   </Languages>
   <App xmlns="" ProductID="{6edaf4e5-952e-4188-8b14-59fa180a3e40}" Title="SayAnything" RuntimeType="Silverlight" Version="1.0" Genre="apps.normal" Author="ktos.info" Description="Sample description" Publisher="ktos.info" PublisherID="{85ae4c87-660b-4f12-a5e0-7acddf268f5c}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>

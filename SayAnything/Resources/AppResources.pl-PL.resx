@@ -118,47 +118,47 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>about</value>
+    <value>o programie</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>SAY ANYTHING</value>
+    <value>POWIEDZ COŚ</value>
   </data>
   <data name="bSendMail" xml:space="preserve">
-    <value>Send e-mail</value>
+    <value>Wyślij e-mail</value>
   </data>
   <data name="lblVoice" xml:space="preserve">
-    <value>Voice (language and gender) to be used:</value>
+    <value>Głos (język i płeć) jaki ma być używany:</value>
   </data>
   <data name="msgException" xml:space="preserve">
-    <value>Some exception was unhandled. Please restart an application to ensure it working properly.</value>
+    <value>Coś poszło nie tak. Uruchom aplikację ponownie, jesli problem będzie występował nadal.</value>
   </data>
   <data name="msgPlayError" xml:space="preserve">
-    <value>There was an error while trying to play your text.</value>
+    <value>Wystąpił błąd przy odtwarzaniu twojego tekstu.</value>
   </data>
   <data name="Say" xml:space="preserve">
-    <value>say</value>
+    <value>mów</value>
   </data>
   <data name="ResourceFlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
+    <value>pl-PL</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>settings</value>
+    <value>ustawienia</value>
   </data>
   <data name="Support" xml:space="preserve">
-    <value>Support: wp7@ktos.info</value>
+    <value>Kontakt: wp7@ktos.info</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>Version 1.0</value>
+    <value>Wersja 1.0.1</value>
   </data>
   <data name="WelcomeText" xml:space="preserve">
-    <value>Hello, how are you?</value>
+    <value>Cześć, jak się masz?</value>
   </data>
   <data name="AboutText" xml:space="preserve">
-    <value>Make your phone to say anything you want! Using brand new, exclusive Text to Speech in Windows Phone 8 you can type any text you want and select a voice. After tapping "say", your phone will say it in it's near real voice! Absolutely amazing! And totally free!
+    <value>Zmuś swój telefon, aby powiedział to, co tylko chcesz! Używając nowego mechanizmu Text to Speech z Windows Phone 8 możesz wpisać dowolny tekst jaki tylko chcesz, wybrac jeden z wielu dostepnych głosów, a po naciśnięciu "mów" twój telefon powie to, co napisaleś. Świetne! I całkowicie za darmo!
 
-You can select different languages and usually two genders to make your phone to sound as you want to!</value>
+W zależności od ustawień swojego telefonu możesz mieć także głos zarówno kobiet, jak i mężczyzn! Wejdź w ustawienia telefonu -&gt; mowa aby pobrać więcej pakietow językowych.</value>
   </data>
 </root>
