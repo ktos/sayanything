@@ -4,3 +4,6 @@ SayAnything/obj/*
 *.user
 *.suo
 *.Cache
+Screens/
+Backup_*
+*/SubmissionInfo/*
