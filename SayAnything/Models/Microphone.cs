@@ -20,38 +20,34 @@ namespace Ktos.SayAnything.Models
         {
             micro = Microsoft.Xna.Framework.Audio.Microphone.Default;
 
-            stream = new MemoryStream();            
+            stream = new MemoryStream();
             micro.BufferDuration = TimeSpan.FromSeconds(1);
             byte[] buffer = new byte[micro.GetSampleSizeInBytes(micro.BufferDuration)];
 
             micro.BufferReady += (s, f) =>
-            {
-                micro.GetData(buffer);
-                stream.Write(buffer, 0, buffer.Length);
-            };
+                {
+                    micro.GetData(buffer);
+                    stream.Write(buffer, 0, buffer.Length);
+                };
         }
 
-        public async Task SaveToIsolatedStorage(string strSaveName)
+        public async Task SaveToIsolatedStorageAsync(string fileName)
         {
-            /*StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
+            StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;            
+            StorageFile f = await local.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
+            var s = await f.OpenStreamForWriteAsync();
 
-            StorageFile f = await local.CreateFileAsync(strSaveName, CreationCollisionOption.ReplaceExisting);
-            var s = await f.OpenStreamForWriteAsync();*/
-
-            IsolatedStorageFile isf = IsolatedStorageFile.GetUserStoreForApplication();
-            var s = isf.CreateFile("record.wav");
-
-            s.Write(stream.ToArray(), 0, stream.ToArray().Length);            
-            s.Close();                        
+            s.Write(stream.ToArray(), 0, stream.ToArray().Length);
+            s.Close();
         }
 
-        public void SaveToMediaLibrary()
+        public void SaveToMediaLibrary(string fileName, string artist, string name)
         {
             MediaLibrary ml = new MediaLibrary();
-            ml.SaveSong(new Uri("record.wav", UriKind.Relative), new SongMetadata() { Name = "record" }, SaveSongOperation.CopyToLibrary);
+            ml.SaveSong(new Uri(fileName, UriKind.Relative), new SongMetadata() { ArtistName = artist, Name = name }, SaveSongOperation.CopyToLibrary);
         }
 
-        public async void RunFile(string fileName)
+        public async Task PlayFileAsync(string fileName)
         {
             StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
             var f = await local.GetFileAsync(fileName);

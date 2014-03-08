@@ -13,7 +13,7 @@ using Windows.Phone.Speech.Synthesis;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Threading;
-using Microsoft.Xna.Framework;
+using Ktos.WindowsPhone;
 
 namespace Ktos.SayAnything
 {
@@ -21,6 +21,7 @@ namespace Ktos.SayAnything
     {
         private ApplicationBarIconButton btnPlay;
         private ApplicationBarIconButton btnPlayAndRecord;
+        private XnaFakeLoop xfl;
 
         // Constructor
         public MainPage()
@@ -29,11 +30,7 @@ namespace Ktos.SayAnything
 
             BuildLocalizedApplicationBar();
 
-            // Timer to simulate the XNA Game Studio game loop (Microphone is from XNA Game Studio)
-            DispatcherTimer dt = new DispatcherTimer();
-            dt.Interval = TimeSpan.FromMilliseconds(50);
-            dt.Tick += delegate { try { FrameworkDispatcher.Update(); } catch { } };
-            dt.Start();
+            xfl = new XnaFakeLoop();            
         }
 
         /// <summary>
@@ -62,34 +59,39 @@ namespace Ktos.SayAnything
             ApplicationBar.MenuItems.Add(miSettings);
             ApplicationBar.MenuItems.Add(miAbout);
 
-        }
-
-        private MemoryStream ms;
+        }        
 
         async void btnPlayAndRecord_Click(object sender, EventArgs e)
         {
+            xfl.Start();
+
+            var fileName = "record.wav";
             Microphone microphone = new Microphone();
 
             btnPlay.IsEnabled = false;
             btnPlayAndRecord.IsEnabled = false;
+            
             microphone.Start();
             await sayText();
             microphone.Stop();
 
-            await microphone.SaveToIsolatedStorage("record.wav");
+            await microphone.SaveToIsolatedStorageAsync(fileName);
+
             btnPlayAndRecord.IsEnabled = true;
-            btnPlay.IsEnabled = true;
+            btnPlay.IsEnabled = true;            
+            
+            microphone.SaveToMediaLibrary(fileName, AppResources.AppName, tbUserText.Text.Substring(0, 10));
+
+            xfl.Stop();
         }
 
         async void appBarButton_Click(object sender, EventArgs e)
         {
-            /*btnPlay.IsEnabled = false;
+            btnPlay.IsEnabled = false;
             btnPlayAndRecord.IsEnabled = false;
             await sayText();
             btnPlayAndRecord.IsEnabled = true;
-            btnPlay.IsEnabled = true;*/
-            Microphone m = new Microphone();
-            m.SaveToMediaLibrary();
+            btnPlay.IsEnabled = true;            
         }
 
         async Task sayText()
@@ -103,14 +105,14 @@ namespace Ktos.SayAnything
             }
             catch (Exception ex)
             {
-                MessageBox.Show(AppResources.msgPlayError);
+                MessageBox.Show(AppResources.msgPlayError + "\n" + ex.Message);
             }
         }
 
         private void tbUserText_TextInputStart(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             this.svText.UpdateLayout();
-            this.svText.ScrollToVerticalOffset(this.tbUserText.ActualHeight);
+            this.svText.ScrollToVerticalOffset(this.tbUserText.ActualHeight);            
         }
     }
 }
