@@ -161,4 +161,10 @@
 
 You can select different languages and usually two genders to make your phone to sound as you want to!</value>
   </data>
+  <data name="lblVoiceMore" xml:space="preserve">
+    <value>Want another language? Go to settings and then speech on your phone, there you can install more voice packs. Avaliable for all Windows Phones!</value>
+  </data>
+  <data name="SayAndRecord" xml:space="preserve">
+    <value>say+record</value>
+  </data>
 </root>

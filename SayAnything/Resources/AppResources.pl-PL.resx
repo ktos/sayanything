@@ -161,4 +161,10 @@
 
 W zależności od ustawień swojego telefonu możesz mieć także głos zarówno kobiet, jak i mężczyzn! Wejdź w ustawienia telefonu -&gt; mowa aby pobrać więcej pakietow językowych.</value>
   </data>
+  <data name="lblVoiceMore" xml:space="preserve">
+    <value>Za mało głosów? A może kolejne języki? Wejdź na swoim telefonie w "ustawienia", a potem "mowa". Tam jest możliwość doinstalowania kolejnych paczek głosowych. Za darmo dla każdego telefonu z Windows Phone!</value>
+  </data>
+  <data name="SayAndRecord" xml:space="preserve">
+    <value>mów+nagraj</value>
+  </data>
 </root>

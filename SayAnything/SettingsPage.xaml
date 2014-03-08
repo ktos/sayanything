@@ -44,6 +44,8 @@
                         </DataTemplate>
                     </toolkit:ListPicker.FullModeItemTemplate>
                 </toolkit:ListPicker>
+
+                <TextBlock Text="{Binding Path=LocalizedResources.lblVoiceMore, Source={StaticResource LocalizedStrings}}" Margin="5" TextWrapping="Wrap"></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>
