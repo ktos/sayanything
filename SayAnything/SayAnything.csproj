@@ -111,6 +111,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Speech.cs" />
+    <Compile Include="SaveSwitchConverter.cs" />
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppResLib.dll.0415.mui" />
+    <Compile Include="Ktos.WindowsPhone.XnaFakeLoop.cs" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">

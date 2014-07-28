@@ -151,7 +151,7 @@
     <value>Support: wp7@ktos.info</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>Version 1.0.1</value>
+    <value>Version 1.2.0</value>
   </data>
   <data name="WelcomeText" xml:space="preserve">
     <value>Hello, how are you?</value>
@@ -166,5 +166,14 @@ You can select different languages and usually two genders to make your phone to
   </data>
   <data name="SayAndRecord" xml:space="preserve">
     <value>say+record</value>
+  </data>
+  <data name="lblSaveText" xml:space="preserve">
+    <value>Save text on exit</value>
+  </data>
+  <data name="switchSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="switchSaveOff" xml:space="preserve">
+    <value>Don't save</value>
   </data>
 </root>

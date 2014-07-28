@@ -99,6 +99,15 @@ namespace Ktos.SayAnything.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save text on exit.
+        /// </summary>
+        public static string lblSaveText {
+            get {
+                return ResourceManager.GetString("lblSaveText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Voice (language and gender) to be used:.
         /// </summary>
         public static string lblVoice {
@@ -189,7 +198,25 @@ namespace Ktos.SayAnything.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Version 1.0.1.
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string switchSave {
+            get {
+                return ResourceManager.GetString("switchSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t save.
+        /// </summary>
+        public static string switchSaveOff {
+            get {
+                return ResourceManager.GetString("switchSaveOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version 1.2.0.
         /// </summary>
         public static string Version {
             get {

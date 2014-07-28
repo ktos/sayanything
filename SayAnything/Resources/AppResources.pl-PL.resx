@@ -151,7 +151,7 @@
     <value>Kontakt: wp7@ktos.info</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>Wersja 1.0.1</value>
+    <value>Wersja 1.2.0</value>
   </data>
   <data name="WelcomeText" xml:space="preserve">
     <value>Cześć, jak się masz?</value>
@@ -166,5 +166,14 @@ W zależności od ustawień swojego telefonu możesz mieć także głos zarówno
   </data>
   <data name="SayAndRecord" xml:space="preserve">
     <value>mów+nagraj</value>
+  </data>
+  <data name="lblSaveText" xml:space="preserve">
+    <value>Zapisuj tekst przy wyjściu</value>
+  </data>
+  <data name="switchSave" xml:space="preserve">
+    <value>Zapisuj</value>
+  </data>
+  <data name="switchSaveOff" xml:space="preserve">
+    <value>Nie zapisuj</value>
   </data>
 </root>
