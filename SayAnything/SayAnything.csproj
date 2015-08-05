@@ -143,7 +143,6 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="SayAnything_2012_12_12_12_41_36.sap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppResLib.dll" />
@@ -153,7 +152,6 @@
     </Content>
     <Content Include="Assets\Tiles\Icon159.png" />
     <Content Include="Assets\Tiles\Icon336.png" />
-    <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />

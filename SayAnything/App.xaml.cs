@@ -71,7 +71,7 @@ namespace Ktos.SayAnything
                 PhoneApplicationService.Current.State["voice"] = Speech.GetVoice(App.VoiceId);
                 PhoneApplicationService.Current.State["index"] = IsolatedStorageSettings.ApplicationSettings["index"];
             }
-            catch (System.Collections.Generic.KeyNotFoundException ex)
+            catch (System.Collections.Generic.KeyNotFoundException)
             {
                 VoiceId = Speech.GetDefaultVoiceId();
                 PhoneApplicationService.Current.State["voice"] = Speech.GetVoice(App.VoiceId);
