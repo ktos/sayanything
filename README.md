@@ -12,6 +12,11 @@ in the Windows Store and was even downloaded a few times, but is not
 supported nor under active development for a few years. So I decided
 to open-source it, maybe will be useful to someone.
 
+The last commits except publishing license information or adding some
+comments were targeted to simultanous "speaking" and recording voice
+via microphone to save speech as voice files. It were never published
+in the Store, however.
+
 App is targeted for Windows Phone 8.0 using Silverlight and has a few
 tricks, for example to get correct locale-based app name on the tile.
 
